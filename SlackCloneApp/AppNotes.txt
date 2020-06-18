@@ -2,4 +2,4 @@
 2. Create a Podfile with Alamofire, SwiftyJSON, Socket.IO Client
 3. Pod install
 4. Clone ZIP https://github.com/John-Lluch/SWRevealViewController
-5. New Group and Supporting Files, SWReveal Move
+5. New Group and Supporting Files, SWReveal

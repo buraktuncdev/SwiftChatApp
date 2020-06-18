@@ -4,11 +4,13 @@ PODS:
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
   - SwiftyJSON (3.1.4)
+  - SWRevealViewController (2.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - Socket.IO-Client-Swift
   - SwiftyJSON
+  - SWRevealViewController (~> 2.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -16,13 +18,15 @@ SPEC REPOS:
     - Socket.IO-Client-Swift
     - Starscream
     - SwiftyJSON
+    - SWRevealViewController
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
 
-PODFILE CHECKSUM: ccb51902bd7360139de850da11d31c62b96d79c5
+PODFILE CHECKSUM: 94effd24d16b4d56c09e2d19a4a282a38fc39c61
 
 COCOAPODS: 1.5.2
