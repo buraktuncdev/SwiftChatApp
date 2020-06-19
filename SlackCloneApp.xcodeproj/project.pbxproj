@@ -15,6 +15,7 @@
 		2E6A730B249BA4DD0046F667 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A730A249BA4DD0046F667 /* ChatVC.swift */; };
 		2E6A730D249BA4EB0046F667 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A730C249BA4EB0046F667 /* ChannelVC.swift */; };
 		2E6A730F249BA9760046F667 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A730E249BA9760046F667 /* SceneDelegate.swift */; };
+		2E6A7311249C890D0046F667 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A7310249C890D0046F667 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2E6A730A249BA4DD0046F667 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2E6A730C249BA4EB0046F667 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		2E6A730E249BA9760046F667 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2E6A7310249C890D0046F667 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		491C02C0FE9F1D4F517667E4 /* Pods-SlackCloneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackCloneApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlackCloneApp/Pods-SlackCloneApp.release.xcconfig"; sourceTree = "<group>"; };
 		7CC525BA4DD7B4C2D206C0B3 /* Pods-SlackCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackCloneApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlackCloneApp/Pods-SlackCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E2BB1A488BD95C10B2935404 /* Pods_SlackCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlackCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 		2E6A7308249BA4A80046F667 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E6A7310249C890D0046F667 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				2E6A730B249BA4DD0046F667 /* ChatVC.swift in Sources */,
 				2E6A72E8249ACF8C0046F667 /* AppDelegate.swift in Sources */,
+				2E6A7311249C890D0046F667 /* GradientView.swift in Sources */,
 				2E6A730D249BA4EB0046F667 /* ChannelVC.swift in Sources */,
 				2E6A730F249BA9760046F667 /* SceneDelegate.swift in Sources */,
 			);
