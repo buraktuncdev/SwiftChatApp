@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthService {
     
@@ -36,29 +37,25 @@ class AuthService {
     
     var userEmail: String {
         get {
-             return defaults.value(forKey: USER_EMAIL) as! String
+            return defaults.value(forKey: USER_EMAIL) as! String
         }
         set {
-             defaults.setValue(newValue, forKey: USER_EMAIL)
+            defaults.setValue(newValue, forKey: USER_EMAIL)
         }
     }
     
     // User Registration Function with Completion Handler
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler){
-       // Web requests are asynchronous so we should use completion handler
-       
-        let lowerCaseEmail = email.lowercased()
+        // Web requests are asynchronous so we should use completion handler
         
-        let requestHeader = [
-            "Content-Type": "application/json; charset=utf-8"
-        ]
+        let lowerCaseEmail = email.lowercased()
         
         let body:[String:Any] = [
             "email":lowerCaseEmail,
             "password":password
         ]
         
-        Alamofire.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: requestHeader).responseString { (response) in
+        Alamofire.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: REQUEST_HEADER).responseString { (response) in
             
             if response.result.error == nil {
                 completion(true)
@@ -73,7 +70,57 @@ class AuthService {
     }
     
     
-    
+    func loginUser(email:String, password: String, completion: @escaping CompletionHandler){
+        let lowerCaseEmail = email.lowercased()
+        
+        let body:[String:Any] = [
+            "email":lowerCaseEmail,
+            "password":password
+        ]
+        
+        /* //json parse manuel
+         Alamofire.request(LOGIN_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: REQUEST_HEADER).responseJSON { (response) in
+         if response.result.error == nil {
+         if let json = response.result.value as? Dictionary<String,Any> {
+         if let email = json["user"] as? String {
+         self.userEmail = email
+         }
+         if let token = json["token"] as? String {
+         self.authToken = token
+         }
+         }
+         self.isLoggedIn = true
+         completion(true)
+         }
+         else {
+         completion(false)
+         debugPrint(response.result.error as Any)
+         }
+         }
+         */
+        
+        // MARK: Parse  with SwiftyJSON
+        Alamofire.request(LOGIN_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: REQUEST_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                
+                guard let data = response.data else {return}
+                let json = JSON(data: data)
+                self.userEmail = json["user"].stringValue  // SwiftyJSON automatically unwrapped for us.
+                self.authToken = json["token"].stringValue // SwiftyJSON automatically unwrapped for us.
+                
+                self.isLoggedIn = true
+                completion(true)
+            }
+            else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+        
+        
+        
+    }
     
 }
 
