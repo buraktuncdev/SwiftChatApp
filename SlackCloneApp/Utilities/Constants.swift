@@ -17,7 +17,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let BASE_URL = "https://swiftchatappsocket.herokuapp.com/v1/"
 let REGISTER_URL = "\(BASE_URL)account/register"
 let LOGIN_URL = "\(BASE_URL)account/login"
-
+let CREATE_USER_URL = "\(BASE_URL)user/add"
 
 // MARK: Segues
 
@@ -34,6 +34,8 @@ let USER_EMAIL = "userEmail"
 
 // MARK: Headers
 let REQUEST_HEADER = [
-           "Content-Type": "application/json; charset=utf-8"
-       ]
+    "Content-Type": "application/json; charset=utf-8"
+]
+
+
 
