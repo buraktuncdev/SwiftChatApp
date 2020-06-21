@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "smackBack.png",
+      "filename" : "smackBack@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "smackBack@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

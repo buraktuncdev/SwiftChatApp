@@ -21,9 +21,6 @@ class CreateAccountVC: UIViewController {
     var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -58,7 +55,7 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func pickAvatarPressed(_ sender: Any) {
-        
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
