@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 // type alias is simply renaming the type (closure type)
@@ -24,6 +25,14 @@ let CREATE_USER_URL = "\(BASE_URL)user/add"
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND_TO_CHANNEL = "unwindToChannel"
+let TO_AVATAR_PICKER = "toAvatarPicker"
+
+// MARK: Colors
+let purplePlaceHolder = #colorLiteral(red: 0.4222300947, green: 0.3009306788, blue: 0.4103954434, alpha: 0.5)
+
+
+// MARK: Notification Constants
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 
 
 // MARK: UserDefaults
