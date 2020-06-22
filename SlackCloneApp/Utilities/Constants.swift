@@ -19,8 +19,9 @@ let BASE_URL = "https://swiftchatappsocket.herokuapp.com/v1/"
 let REGISTER_URL = "\(BASE_URL)account/register"
 let LOGIN_URL = "\(BASE_URL)account/login"
 let CREATE_USER_URL = "\(BASE_URL)user/add"
-
 let USER_BY_EMAIL_URL = "\(BASE_URL)user/byEmail/"
+let URL_GET_CHANNELS = "\(BASE_URL)channel/"
+
 
 // MARK: Segues
 
