@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "smackBack@1x.png",
+      "filename" : "backbutton1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,7 +10,7 @@
       "scale" : "2x"
     },
     {
-      "filename" : "smackBack@3x.png",
+      "filename" : "backbutton3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

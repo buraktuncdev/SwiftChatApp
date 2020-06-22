@@ -19,6 +19,9 @@ let BASE_URL = "https://swiftchatappsocket.herokuapp.com/v1/"
 let REGISTER_URL = "\(BASE_URL)account/register"
 let LOGIN_URL = "\(BASE_URL)account/login"
 let CREATE_USER_URL = "\(BASE_URL)user/add"
+let USER_BY_EMAIL_URL = "\(BASE_URL)user/byEmail/"
+let URL_GET_CHANNELS = "\(BASE_URL)channel/"
+
 
 // MARK: Segues
 
@@ -27,12 +30,15 @@ let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND_TO_CHANNEL = "unwindToChannel"
 let TO_AVATAR_PICKER = "toAvatarPicker"
 
+
 // MARK: Colors
-let purplePlaceHolder = #colorLiteral(red: 0.4222300947, green: 0.3009306788, blue: 0.4103954434, alpha: 0.5)
+let purplePlaceHolder = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 
 
 // MARK: Notification Constants
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTIFC_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
 
 
 // MARK: UserDefaults
@@ -43,6 +49,11 @@ let USER_EMAIL = "userEmail"
 
 // MARK: Headers
 let REQUEST_HEADER = [
+    "Content-Type": "application/json; charset=utf-8"
+]
+
+let BEARER_HEADER = [
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
 
