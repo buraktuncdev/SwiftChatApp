@@ -20,6 +20,8 @@ let REGISTER_URL = "\(BASE_URL)account/register"
 let LOGIN_URL = "\(BASE_URL)account/login"
 let CREATE_USER_URL = "\(BASE_URL)user/add"
 
+let USER_BY_EMAIL_URL = "\(BASE_URL)user/byEmail/"
+
 // MARK: Segues
 
 let TO_LOGIN = "toLogin"
@@ -28,7 +30,7 @@ let UNWIND_TO_CHANNEL = "unwindToChannel"
 let TO_AVATAR_PICKER = "toAvatarPicker"
 
 // MARK: Colors
-let purplePlaceHolder = #colorLiteral(red: 0.4222300947, green: 0.3009306788, blue: 0.4103954434, alpha: 0.5)
+let purplePlaceHolder = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
 
 
 // MARK: Notification Constants
@@ -45,6 +47,11 @@ let USER_EMAIL = "userEmail"
 let REQUEST_HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
+
+let BEARER_HEADER = [
+          "Authorization": "Bearer \(AuthService.instance.authToken)",
+          "Content-Type": "application/json; charset=utf-8"
+      ]
 
 
 

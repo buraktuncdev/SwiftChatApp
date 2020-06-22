@@ -87,9 +87,7 @@ class CreateAccountVC: UIViewController {
                         print("Success2")
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor) { (success) in
                             if success {
-                                print("Success3")
-                                print(UserDataService.instance.name, UserDataService.instance.avatarName)
-                                
+                             
                                 self.spinner.isHidden = true
                                 self.spinner.stopAnimating()
                                 self.performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)

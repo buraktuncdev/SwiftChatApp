@@ -12,13 +12,13 @@ import UIKit
 @IBDesignable
 class GradientView: UIView {
 
-    @IBInspectable var topColor: UIColor = #colorLiteral(red: 0.3921568627, green: 0.3019607843, blue: 0.4039215686, alpha: 1) {
+    @IBInspectable var topColor: UIColor = #colorLiteral(red: 0.4235294118, green: 0.3009306788, blue: 0.4103954434, alpha: 1) {
         didSet {
             self.setNeedsLayout()
         }
     }
     
-    @IBInspectable var bottomColor: UIColor = #colorLiteral(red: 0.9254901961, green: 0.5176470588, blue: 0.4862745098, alpha: 1) {
+    @IBInspectable var bottomColor: UIColor = #colorLiteral(red: 0.9719236493, green: 0.4874661565, blue: 0.4658593535, alpha: 1) {
         didSet {
             self.setNeedsLayout()
         }

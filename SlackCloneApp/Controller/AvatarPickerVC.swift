@@ -24,8 +24,12 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        segmentControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        segmentControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        
     }
-  
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -50,14 +54,14 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func segmentControlChanged(_ sender: Any) {
-          if segmentControl.selectedSegmentIndex == 0 {
-              avatarType = .dark
-          } else {
-              avatarType = .light
-          }
-          collectionView.reloadData()
-      }
-      
+        if segmentControl.selectedSegmentIndex == 0 {
+            avatarType = .dark
+        } else {
+            avatarType = .light
+        }
+        collectionView.reloadData()
+    }
+    
     
     // Size and space between cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
