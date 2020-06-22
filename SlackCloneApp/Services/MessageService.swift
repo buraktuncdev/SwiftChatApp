@@ -15,6 +15,8 @@ class MessageService {
     static let instance = MessageService()
     
     var channels = [Channel]()
+    var selectedChannel : Channel?
+    
     
     func findAllChannel(completion: @escaping CompletionHandler){
         
@@ -32,9 +34,23 @@ class MessageService {
                 } catch let error {
                     debugPrint(error as Any)
                 }
-                print(self.channels)
+                NotificationCenter.default.post(name: NOTIFC_CHANNELS_LOADED, object: nil)
                 completion(true)
-                
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+            
+        }
+    }
+    
+    // When log out
+    func clearChannels() {
+        channels.removeAll()
+    }
+}
+
+
 //        This is the old version JSON Parsing with SwiftyJSON.
 //                if let json = JSON(data: data).array {
 //                    for item in json {
@@ -47,15 +63,3 @@ class MessageService {
 //                    }
 //                    completion(true)
 //                }
-                
-            } else {
-                completion(false)
-                debugPrint(response.result.error as Any)
-            }
-            
-        }
-    }
-    
-}
-
-

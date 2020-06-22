@@ -32,6 +32,7 @@
 		2EAF420424A1069C00B03592 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF420324A1069C00B03592 /* ChannelCell.swift */; };
 		2EAF420724A10CFA00B03592 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF420524A10CFA00B03592 /* AddChannelVC.swift */; };
 		2EAF420824A10CFA00B03592 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EAF420624A10CFA00B03592 /* AddChannelVC.xib */; };
+		2EAF420A24A14EA500B03592 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF420924A14EA500B03592 /* SocketService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		2EAF420324A1069C00B03592 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		2EAF420524A10CFA00B03592 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		2EAF420624A10CFA00B03592 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		2EAF420924A14EA500B03592 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		491C02C0FE9F1D4F517667E4 /* Pods-SlackCloneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackCloneApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlackCloneApp/Pods-SlackCloneApp.release.xcconfig"; sourceTree = "<group>"; };
 		7CC525BA4DD7B4C2D206C0B3 /* Pods-SlackCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackCloneApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlackCloneApp/Pods-SlackCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E2BB1A488BD95C10B2935404 /* Pods_SlackCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlackCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 				2E6A731A249E72C40046F667 /* AuthService.swift */,
 				2E929417249EA9AF0096583C /* UserDataService.swift */,
 				2EAF420124A0D50A00B03592 /* MessageService.swift */,
+				2EAF420924A14EA500B03592 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EAF420A24A14EA500B03592 /* SocketService.swift in Sources */,
 				2EAF41FC24A0A00300B03592 /* ProfileVC.swift in Sources */,
 				2EAF420424A1069C00B03592 /* ChannelCell.swift in Sources */,
 				2EAF420024A0D43700B03592 /* Channel.swift in Sources */,

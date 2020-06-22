@@ -37,6 +37,8 @@ let purplePlaceHolder = #colorLiteral(red: 0.8039215803, green: 0.8039215803, bl
 
 // MARK: Notification Constants
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTIFC_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
 
 
 // MARK: UserDefaults
@@ -51,9 +53,9 @@ let REQUEST_HEADER = [
 ]
 
 let BEARER_HEADER = [
-          "Authorization": "Bearer \(AuthService.instance.authToken)",
-          "Content-Type": "application/json; charset=utf-8"
-      ]
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
+    "Content-Type": "application/json; charset=utf-8"
+]
 
 
 

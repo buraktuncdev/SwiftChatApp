@@ -576,6 +576,7 @@
                         <viewLayoutGuide key="safeArea" id="vmg-lu-aa0"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLabel" destination="meB-6D-lVQ" id="9yJ-mS-JxU"/>
                         <outlet property="menuBtn" destination="0KZ-u4-dhh" id="fus-hi-dGX"/>
                     </connections>
                 </viewController>

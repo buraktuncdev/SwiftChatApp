@@ -24,9 +24,18 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 70
-        NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChanged(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         tableView.delegate = self
         tableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChanged(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIFC_CHANNELS_LOADED, object: nil)
+        
+        
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,9 +61,14 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // XIB file as View Controller
     @IBAction func addChannelButtonPressed(_ sender: Any) {
-        let addChannelVC = AddChannelVC()
-        addChannelVC.modalPresentationStyle = .custom
-        present(addChannelVC, animated: true, completion: nil)
+        
+        if AuthService.instance.isLoggedIn {
+            let addChannelVC = AddChannelVC()
+            addChannelVC.modalPresentationStyle = .custom
+            present(addChannelVC, animated: true, completion: nil)
+        }
+        
+        
     }
     
     func setupUserInfo() {
@@ -66,7 +80,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             loginButton.setTitle("Login", for: .normal)
             userImage.image = UIImage(named: "menuProfileIcon")
             userImage.backgroundColor = .clear
+            tableView.reloadData()
         }
+    }
+    
+    @objc func channelsLoaded(_ notif: Notification) {
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,6 +104,18 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    
+    // Did Select A Channel
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        
+        
+        // When we select an item from the ChannelVC list
+        self.revealViewController()?.revealToggle(animated: true)
     }
     
     
