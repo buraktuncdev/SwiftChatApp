@@ -35,7 +35,7 @@ class MessageService {
                 print(self.channels)
                 completion(true)
                 
-// This is the old version JSON Parsing with SwiftyJSON.
+//        This is the old version JSON Parsing with SwiftyJSON.
 //                if let json = JSON(data: data).array {
 //                    for item in json {
 //                        let name = item["name"].stringValue
@@ -44,7 +44,6 @@ class MessageService {
 //
 //                        let channel = Channel(id: id, channelTitle: name, channelDescription: channelDescription)
 //                        self.channels.append(channel)
-//
 //                    }
 //                    completion(true)
 //                }
@@ -58,3 +57,5 @@ class MessageService {
     }
     
 }
+
+
