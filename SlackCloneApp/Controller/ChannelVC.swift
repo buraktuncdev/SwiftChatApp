@@ -40,6 +40,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidAppear(_ animated: Bool) {
         setupUserInfo()
+        
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
