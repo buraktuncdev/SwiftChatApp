@@ -34,9 +34,39 @@ class CreateAccountVC: UIViewController {
         if UserDataService.instance.avatarName != "" {
             userImg.image = UIImage(named: UserDataService.instance.avatarName) // From the Avatar Picker VC
             avatarName = UserDataService.instance.avatarName
+            
             if avatarName.contains("light") && bgColor == nil {
                 userImg.backgroundColor = .lightGray
             }
+        }
+    }
+    
+    
+    
+    @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
+    }
+    
+    @IBAction func closeButtonPressed(_ sender: Any) {
+        //dismiss(animated: true, completion: nil)
+        
+        // when pressed the close button (exit segue)
+        performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
+    }
+    
+    
+    // MARK: Random Generate RGB Color
+    @IBAction func pickBGColorPressed(_ sender: Any) {
+        let r = CGFloat(arc4random_uniform(255)) / 255
+        let g = CGFloat(arc4random_uniform(255)) / 255
+        let b = CGFloat(arc4random_uniform(255)) / 255
+        
+        bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        avatarColor = "[\(r), \(g), \(b), 1]"
+        
+        // MARK: Fade Animation With Change BGCOLOR
+        UIView.animate(withDuration: 0.2) {
+            self.userImg.backgroundColor = self.bgColor
         }
     }
     
@@ -59,6 +89,7 @@ class CreateAccountVC: UIViewController {
                             if success {
                                 print("Success3")
                                 print(UserDataService.instance.name, UserDataService.instance.avatarName)
+                                
                                 self.spinner.isHidden = true
                                 self.spinner.stopAnimating()
                                 self.performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
@@ -73,31 +104,6 @@ class CreateAccountVC: UIViewController {
             }
         }
         
-    }
-    
-    @IBAction func pickAvatarPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
-    }
-    
-    @IBAction func closeButtonPressed(_ sender: Any) {
-        //dismiss(animated: true, completion: nil)
-        
-        // when pressed the close button (exit segue)
-        performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
-    }
-    
-    
-    // MARK: Random Generate RGB Color
-    @IBAction func pickBGColorPressed(_ sender: Any) {
-        let r = CGFloat(arc4random_uniform(255)) / 255
-        let g = CGFloat(arc4random_uniform(255)) / 255
-        let b = CGFloat(arc4random_uniform(255)) / 255
-        bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
-        
-        // MARK: Fade Animation With Change BGCOLOR
-        UIView.animate(withDuration: 0.2) {
-            self.userImg.backgroundColor = self.bgColor
-        }
     }
     
     func setupView() {

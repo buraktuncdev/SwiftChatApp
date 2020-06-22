@@ -64,9 +64,7 @@ class AuthService {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
-            
         }
-        
     }
     
     // Login Function with Completion Handler and SwiftyJSON
@@ -147,7 +145,7 @@ class AuthService {
                 guard let data = response.data else {return}
                 let json = JSON(data: data)
                 let id = json["_id"].stringValue  // SwiftyJSON automatically unwrapped for us.
-                let color = json["color"].stringValue
+                let color = json["avatarColor"].stringValue
                 let avatarName = json["avatarName"].stringValue
                 let email = json["email"].stringValue
                 let name = json["name"].stringValue
@@ -159,13 +157,7 @@ class AuthService {
                 debugPrint(response.result.error as Any)
             }
         }
-        
-        
-        
     }
-    
-    
-    
 }
 
 
