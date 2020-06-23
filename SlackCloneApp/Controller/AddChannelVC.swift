@@ -13,11 +13,16 @@ class AddChannelVC: UIViewController {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var channelNameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
+    let messageTextFieldDelegate = MessageTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
+    
+    func setupTextFieldConfig(toTextField textField: UITextField) {
+           textField.delegate = messageTextFieldDelegate
+       }
     
     @IBAction func closeModalPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -41,6 +46,9 @@ class AddChannelVC: UIViewController {
     
     func setupView() {
         
+        // Message Text Field Configs
+        self.setupTextFieldConfig(toTextField: channelNameTextField)
+         self.setupTextFieldConfig(toTextField: descriptionTextField)
         
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(AddChannelVC.closeTap(_:)))
         bgView.addGestureRecognizer(closeTouch)

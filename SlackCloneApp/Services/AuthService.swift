@@ -132,7 +132,7 @@ class AuthService {
         
         
         Alamofire.request(CREATE_USER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            
+           
             if response.result.error == nil {
                 
                 guard let data = response.data else {return}

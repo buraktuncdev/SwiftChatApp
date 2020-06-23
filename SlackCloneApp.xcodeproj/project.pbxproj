@@ -35,6 +35,7 @@
 		2EAF420A24A14EA500B03592 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF420924A14EA500B03592 /* SocketService.swift */; };
 		2EAF420C24A1D59400B03592 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF420B24A1D59400B03592 /* Message.swift */; };
 		2EAF421224A1DF8F00B03592 /* MessageTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF421124A1DF8F00B03592 /* MessageTextFieldDelegate.swift */; };
+		2EAF421424A1E70300B03592 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF421324A1E70300B03592 /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		2EAF420924A14EA500B03592 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		2EAF420B24A1D59400B03592 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2EAF421124A1DF8F00B03592 /* MessageTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextFieldDelegate.swift; sourceTree = "<group>"; };
+		2EAF421324A1E70300B03592 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		491C02C0FE9F1D4F517667E4 /* Pods-SlackCloneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackCloneApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlackCloneApp/Pods-SlackCloneApp.release.xcconfig"; sourceTree = "<group>"; };
 		7CC525BA4DD7B4C2D206C0B3 /* Pods-SlackCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlackCloneApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlackCloneApp/Pods-SlackCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E2BB1A488BD95C10B2935404 /* Pods_SlackCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlackCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				2E0475C824A009EE00A01E4F /* CircleImage.swift */,
 				2EAF420324A1069C00B03592 /* ChannelCell.swift */,
 				2EAF421124A1DF8F00B03592 /* MessageTextFieldDelegate.swift */,
+				2EAF421324A1E70300B03592 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				2EAF420024A0D43700B03592 /* Channel.swift in Sources */,
 				2E6A730B249BA4DD0046F667 /* ChatVC.swift in Sources */,
 				2E92941A249FA76E0096583C /* AvatarPickerVC.swift in Sources */,
+				2EAF421424A1E70300B03592 /* MessageCell.swift in Sources */,
 				2EAF420C24A1D59400B03592 /* Message.swift in Sources */,
 				2E929416249EA2EA0096583C /* RoundedButton.swift in Sources */,
 				2E0475C924A009EE00A01E4F /* CircleImage.swift in Sources */,
