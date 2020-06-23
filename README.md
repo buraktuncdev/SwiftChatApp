@@ -20,7 +20,7 @@ Chat with others on channels
 - SWRevealViewController
 
 
-![alt text][url=https://ibb.co/sqb8xDX][img]https://i.ibb.co/sqb8xDX/Whats-App-Image-2020-06-23-at-13-35-35-1.jpg[/img][/url] 
-![alt text][url=https://ibb.co/D9r8m3P][img]https://i.ibb.co/D9r8m3P/Whats-App-Image-2020-06-23-at-13-35-35-2.jpg[/img][/url] 
-![alt text][url=https://ibb.co/WGZGzKx][img]https://i.ibb.co/WGZGzKx/Whats-App-Image-2020-06-23-at-13-35-35-3.jpg[/img][/url] 
-![alt text][url=https://ibb.co/0Mx4XnH][img]https://i.ibb.co/0Mx4XnH/Whats-App-Image-2020-06-23-at-13-35-35.jpg[/img][/url]
+![alt text](https://i.ibb.co/yqdHvMx/Whats-App-Image-2020-06-23-at-13-35-35-1.jpg)
+![alt text](https://i.ibb.co/T4WbJzD/Whats-App-Image-2020-06-23-at-13-35-35-2.jpg)
+![alt text](https://i.ibb.co/ydtdksf/Whats-App-Image-2020-06-23-at-13-35-35-3.jpg)
+![alt text](https://i.ibb.co/DCZcb10/Whats-App-Image-2020-06-23-at-13-35-35.jpg)
