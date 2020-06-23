@@ -1,5 +1,6 @@
 # SwiftChatApp
-
+[![codebeat badge](https://codebeat.co/badges/daf44f38-23bc-46a7-91e1-59faded338f1)]
+(https://codebeat.co/projects/github-com-buraktuncdev-swiftchatapp-test)
 Chat with others on channels
 
 > Features
