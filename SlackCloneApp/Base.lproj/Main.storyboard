@@ -573,6 +573,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageBoxEditing:" destination="Uax-eT-1AL" eventType="editingChanged" id="Wnr-ug-DZh"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nz-PG-o6I">
                                 <rect key="frame" x="366" y="822" width="40" height="40"/>
@@ -585,29 +588,94 @@
                                     <action selector="sendMessagePressed:" destination="Uax-eT-1AL" eventType="touchUpInside" id="Hvn-Yv-Sxm"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-je-Lmm">
+                                <rect key="frame" x="0.0" y="79" width="414" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="80" id="m6G-ue-WOd" customClass="MessageCell" customModule="SlackCloneApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m6G-ue-WOd" id="fPa-1o-DAA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AEO-vN-Gkl" customClass="CircleImage" customModule="SlackCloneApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="OGf-wh-NKA"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Zf3-Q3-kVA"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burakTunc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vle-Bu-kaz">
+                                                    <rect key="frame" x="82" y="11" width="106" height="26"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAc-GB-EZ9">
+                                                    <rect key="frame" x="82" y="40" width="300" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7d-WB-0Gl">
+                                                    <rect key="frame" x="198" y="14" width="81" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="K7d-WB-0Gl" firstAttribute="centerY" secondItem="vle-Bu-kaz" secondAttribute="centerY" id="1C4-1a-Ihx"/>
+                                                <constraint firstItem="vle-Bu-kaz" firstAttribute="top" secondItem="AEO-vN-Gkl" secondAttribute="top" id="6gf-KT-MoW"/>
+                                                <constraint firstItem="iAc-GB-EZ9" firstAttribute="leading" secondItem="AEO-vN-Gkl" secondAttribute="trailing" constant="12" id="LXo-8Y-2gn"/>
+                                                <constraint firstItem="K7d-WB-0Gl" firstAttribute="leading" secondItem="vle-Bu-kaz" secondAttribute="trailing" constant="10" id="Q7A-Zf-av2"/>
+                                                <constraint firstItem="AEO-vN-Gkl" firstAttribute="leading" secondItem="fPa-1o-DAA" secondAttribute="leadingMargin" id="YCF-gO-dWO"/>
+                                                <constraint firstItem="vle-Bu-kaz" firstAttribute="leading" secondItem="AEO-vN-Gkl" secondAttribute="trailing" constant="12" id="mds-ok-L60"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="iAc-GB-EZ9" secondAttribute="bottom" constant="9" id="nDn-P2-MLE"/>
+                                                <constraint firstItem="iAc-GB-EZ9" firstAttribute="top" secondItem="vle-Bu-kaz" secondAttribute="bottom" constant="3" id="o5L-bE-Hmr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iAc-GB-EZ9" secondAttribute="trailing" constant="12" id="oTZ-DJ-dcF"/>
+                                                <constraint firstItem="AEO-vN-Gkl" firstAttribute="top" secondItem="fPa-1o-DAA" secondAttribute="topMargin" id="ycg-tf-lP9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="iAc-GB-EZ9" id="5Ja-W3-vi8"/>
+                                            <outlet property="timestampLabel" destination="K7d-WB-0Gl" id="H1f-1y-hhX"/>
+                                            <outlet property="userImage" destination="AEO-vN-Gkl" id="YGm-rh-5eZ"/>
+                                            <outlet property="userNameLabel" destination="vle-Bu-kaz" id="giw-pI-M7B"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="fb8-Fk-fl9" firstAttribute="top" secondItem="hXA-je-Lmm" secondAttribute="bottom" id="3Wx-Ca-I4F"/>
                             <constraint firstItem="9C4-KD-yDV" firstAttribute="top" secondItem="h8D-3E-r9i" secondAttribute="top" id="Aqy-ch-ETl"/>
+                            <constraint firstItem="hXA-je-Lmm" firstAttribute="leading" secondItem="vmg-lu-aa0" secondAttribute="leading" id="H3p-eE-r3B"/>
                             <constraint firstItem="fb8-Fk-fl9" firstAttribute="bottom" secondItem="vmg-lu-aa0" secondAttribute="bottom" id="PWT-99-aaH"/>
                             <constraint firstItem="1Nz-PG-o6I" firstAttribute="centerY" secondItem="fb8-Fk-fl9" secondAttribute="centerY" id="PxY-Fy-jnw"/>
                             <constraint firstItem="9C4-KD-yDV" firstAttribute="trailing" secondItem="vmg-lu-aa0" secondAttribute="trailing" id="Yda-4L-dEp"/>
                             <constraint firstItem="vmg-lu-aa0" firstAttribute="trailing" secondItem="1Nz-PG-o6I" secondAttribute="trailing" constant="8" id="Z2G-eK-sTY"/>
+                            <constraint firstItem="vmg-lu-aa0" firstAttribute="trailing" secondItem="hXA-je-Lmm" secondAttribute="trailing" id="b1M-0d-ap9"/>
                             <constraint firstItem="vmg-lu-aa0" firstAttribute="trailing" secondItem="fb8-Fk-fl9" secondAttribute="trailing" id="d1S-dh-KbP"/>
                             <constraint firstItem="fb8-Fk-fl9" firstAttribute="leading" secondItem="vmg-lu-aa0" secondAttribute="leading" id="dIw-VZ-jEd"/>
                             <constraint firstItem="9C4-KD-yDV" firstAttribute="leading" secondItem="vmg-lu-aa0" secondAttribute="leading" id="h4p-8r-U5s"/>
+                            <constraint firstItem="hXA-je-Lmm" firstAttribute="top" secondItem="9C4-KD-yDV" secondAttribute="bottom" id="n8B-Ym-pog"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vmg-lu-aa0"/>
                     </view>
                     <connections>
                         <outlet property="channelNameLabel" destination="meB-6D-lVQ" id="9yJ-mS-JxU"/>
                         <outlet property="menuBtn" destination="0KZ-u4-dhh" id="fus-hi-dGX"/>
+                        <outlet property="messageTableView" destination="hXA-je-Lmm" id="oHH-zu-w5f"/>
                         <outlet property="messageTextField" destination="fb8-Fk-fl9" id="FXO-WH-Pyc"/>
+                        <outlet property="sendButton" destination="1Nz-PG-o6I" id="UQ1-GM-Qij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zb-fg-Dm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="967" y="498"/>
+            <point key="canvasLocation" x="966.66666666666674" y="497.54464285714283"/>
         </scene>
     </scenes>
     <resources>
