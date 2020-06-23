@@ -21,10 +21,9 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // Outlets
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var channelNameLabel: UILabel!
-    
     @IBOutlet weak var messageTextField: UITextField!
-    
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var typingUsersLabel: UILabel!
     
     
     func setupTextFieldConfig(toTextField textField: UITextField) {
@@ -64,11 +63,41 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if success {
                 self.messageTableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
-                    let intIndex = IndexPath(row: MessageService.instance.messages.count - 1 , section: 0)
-                    self.messageTableView.scrollToRow(at: intIndex, at: .bottom, animated: true)
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1 , section: 0)
+                    self.messageTableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
                 }
             }
         }
+        
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?._id else { return }
+            var names = ""
+            var numberOfTypers = 0
+            
+            for(typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+            
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn == true {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                self.typingUsersLabel.text = "\(names) \(verb) typing a message"
+            } else {
+                self.typingUsersLabel.text = ""
+            }
+            
+        }
+        
+        
         
         
         // Check the whether logged in
@@ -89,6 +118,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if success {
                     self.messageTextField.text = ""
                     self.messageTextField.resignFirstResponder()
+                    SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             }
             
@@ -97,12 +127,15 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBAction func messageBoxEditing(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?._id else {return}
         if messageTextField.text == "" {
             isTyping = false
             sendButton.isHidden = true
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             if isTyping == false {
                 sendButton.isHidden = false
+                SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelId)
             }
             isTyping = true
         }

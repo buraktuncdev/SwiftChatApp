@@ -589,7 +589,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXA-je-Lmm">
-                                <rect key="frame" x="0.0" y="79" width="414" height="743"/>
+                                <rect key="frame" x="0.0" y="79" width="414" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="80" id="m6G-ue-WOd" customClass="MessageCell" customModule="SlackCloneApp" customModuleProvider="target">
@@ -647,14 +647,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5D-D4-TVd">
+                                <rect key="frame" x="7" y="815" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="fb8-Fk-fl9" firstAttribute="top" secondItem="hXA-je-Lmm" secondAttribute="bottom" id="3Wx-Ca-I4F"/>
+                            <constraint firstItem="fb8-Fk-fl9" firstAttribute="top" secondItem="hXA-je-Lmm" secondAttribute="bottom" constant="28" id="3Wx-Ca-I4F"/>
                             <constraint firstItem="9C4-KD-yDV" firstAttribute="top" secondItem="h8D-3E-r9i" secondAttribute="top" id="Aqy-ch-ETl"/>
                             <constraint firstItem="hXA-je-Lmm" firstAttribute="leading" secondItem="vmg-lu-aa0" secondAttribute="leading" id="H3p-eE-r3B"/>
                             <constraint firstItem="fb8-Fk-fl9" firstAttribute="bottom" secondItem="vmg-lu-aa0" secondAttribute="bottom" id="PWT-99-aaH"/>
                             <constraint firstItem="1Nz-PG-o6I" firstAttribute="centerY" secondItem="fb8-Fk-fl9" secondAttribute="centerY" id="PxY-Fy-jnw"/>
+                            <constraint firstItem="X5D-D4-TVd" firstAttribute="leading" secondItem="vmg-lu-aa0" secondAttribute="leading" constant="7" id="SRg-Xf-aRe"/>
                             <constraint firstItem="9C4-KD-yDV" firstAttribute="trailing" secondItem="vmg-lu-aa0" secondAttribute="trailing" id="Yda-4L-dEp"/>
                             <constraint firstItem="vmg-lu-aa0" firstAttribute="trailing" secondItem="1Nz-PG-o6I" secondAttribute="trailing" constant="8" id="Z2G-eK-sTY"/>
                             <constraint firstItem="vmg-lu-aa0" firstAttribute="trailing" secondItem="hXA-je-Lmm" secondAttribute="trailing" id="b1M-0d-ap9"/>
@@ -662,6 +669,7 @@
                             <constraint firstItem="fb8-Fk-fl9" firstAttribute="leading" secondItem="vmg-lu-aa0" secondAttribute="leading" id="dIw-VZ-jEd"/>
                             <constraint firstItem="9C4-KD-yDV" firstAttribute="leading" secondItem="vmg-lu-aa0" secondAttribute="leading" id="h4p-8r-U5s"/>
                             <constraint firstItem="hXA-je-Lmm" firstAttribute="top" secondItem="9C4-KD-yDV" secondAttribute="bottom" id="n8B-Ym-pog"/>
+                            <constraint firstItem="fb8-Fk-fl9" firstAttribute="top" secondItem="X5D-D4-TVd" secondAttribute="bottom" constant="7" id="whC-JQ-yTr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vmg-lu-aa0"/>
                     </view>
@@ -671,6 +679,7 @@
                         <outlet property="messageTableView" destination="hXA-je-Lmm" id="oHH-zu-w5f"/>
                         <outlet property="messageTextField" destination="fb8-Fk-fl9" id="FXO-WH-Pyc"/>
                         <outlet property="sendButton" destination="1Nz-PG-o6I" id="UQ1-GM-Qij"/>
+                        <outlet property="typingUsersLabel" destination="X5D-D4-TVd" id="E4M-p0-6hU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zb-fg-Dm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
